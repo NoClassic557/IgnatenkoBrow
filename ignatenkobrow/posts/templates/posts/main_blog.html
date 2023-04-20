@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{%block title%}
+Прайс
+{%endblock%}
+
+
+
+{%block content%}
+    {% for io in blog %}
+        {{ io.name_blog }}
+        {{ io.main_text }}
+        {{ io.pub_date }}
+        {{ io.author.username }}<br>
+    {% endfor %}
+    <a href="{%url 'blog_creat'%}"><li><button class="btn btn-primary"> Добавить пост</button></li></a>
+{%endblock%}

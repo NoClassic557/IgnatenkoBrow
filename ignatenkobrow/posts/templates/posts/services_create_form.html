@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load user_filters %}
+
+{%block title%}
+Главная
+{%endblock%}
+
+{%block content%}
+<form method="post" enctype="multipart/form-data" style="width:500px;">
+    {%csrf_token%}
+    {{ form.procedure }}<br>
+    {{ form.price }}<br>
+    {{ form.group }}<br>
+    <button type="submit"  class="btn btn-info">Принять</button>
+</form>
+{%endblock%}

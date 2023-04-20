@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load user_filters %}
+
+{%block title%}
+Добавелние поста
+{%endblock%}
+
+{%block content%}
+    <div class="clear_features">
+        <h1>Форма по добавлению поста</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.name_blog }}<br>
+            {{ form.main_text }}<br>
+            <button type="submit"  class="btn btn-primary">Принять</button>
+        </form>
+    </div>
+{%endblock%}

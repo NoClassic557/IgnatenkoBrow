@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load user_filters %}
+
+{%block title%}
+Добавелние группы
+{%endblock%}
+
+{%block content%}
+    <div class="clear_features">
+        <h1>Форма по добавлению группы</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.name }}
+            <button type="submit"  class="btn btn-primary">Принять</button>
+        </form>
+    </div>
+{%endblock%}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{%block title%}
+Прайс
+{%endblock%}
+
+
+
+{%block content%}
+          {% if service %}
+              {% for ti in service%}
+                <div class="alert aler-warning">
+                    {% ifchanged ti.group%}
+                    <h1>{{ti.group}}</h1>
+                    {%endifchanged%}
+                    {{ ti.procedure }}
+                    <p>{{ ti.price }}</p>
+                    <a href="{%url 'price-change' ti.id%}" class="btn btn-primary">Изменить</a>
+                </div>
+              {% endfor %}
+          {% else %}
+                <p>У вас нет услуг</p>
+          {% endif %}
+            <a href="{%url 'add'%}"><li><button class="btn btn-primary"> Добавить улугу</button></li></a>
+            <a href="{%url 'group'%}"><li><button class="btn btn-primary"> Добавить группу </button></li></a>
+
+{%endblock%}
