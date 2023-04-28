@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
 
 {%block title%}
-Прайс
+Блог
 {%endblock%}
 
+{% load staticfiles %}
 
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
 {%block content%}
     {% for io in blog %}
-        {{ io.name_blog }}
-        {{ io.main_text }}
-        {{ io.pub_date }}
-        {{ io.author.username }}<br>
+<p class="text-center">{{ io.name_blog }}</p>
+<p class="text-center">{{ io.main_text }}</p>
+<p class="text-center">{{ io.pub_date }}</p>
+<footer><p class="text-center">{{ io.author.username }}</p></footer>
     {% endfor %}
+    <footer> Ирина Игнатенко</footer>
     <a href="{%url 'blog_creat'%}"><li><button class="btn btn-primary"> Добавить пост</button></li></a>
+  </div>
+</div>
 {%endblock%}
